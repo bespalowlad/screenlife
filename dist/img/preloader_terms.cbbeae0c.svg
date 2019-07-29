@@ -1,0 +1,28 @@
+<svg width="955" height="532" viewBox="0 0 955 532" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect clip-path="url(#header)" x="0" y="0" width="955" height="532" style="fill: url(&quot;#style&quot;);"></rect>
+    <defs>
+        <clipPath id="header">
+            <rect x="135.22" y="131.136" width="618.573" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="135.22" y="168.22" width="686.362" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="135.22" y="205.304" width="686.362" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="131" y="264" width="618.573" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="131" y="301.084" width="686.362" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="131" y="338.168" width="686.362" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="138.032" y="397" width="618.573" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="138.032" y="434.084" width="686.362" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="138.032" y="471.168" width="686.362" height="21.3946" rx="4" fill="#EEF3FF"/>
+            <rect x="287" y="37" width="381.312" height="57.0523" rx="4" fill="#EEF3FF"/>
+        </clipPath>
+        <linearGradient id="style">
+            <stop offset="0.675228" stop-color="#EEF3FF">
+                <animate attributeName="offset" values="-2; 1" dur="2s" repeatCount="indefinite"></animate>
+            </stop>
+            <stop offset="1.17523" stop-color="#e3ebff">
+                <animate attributeName="offset" values="-1.5; 1.5" dur="2s" repeatCount="indefinite"></animate>
+            </stop>
+            <stop offset="1.67523" stop-color="#EEF3FF">
+                <animate attributeName="offset" values="-1; 2" dur="2s" repeatCount="indefinite"></animate>
+            </stop>
+        </linearGradient>
+    </defs>
+</svg>

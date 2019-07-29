@@ -1,0 +1,24 @@
+<svg width="1423" height="785" viewBox="0 0 1423 785" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect clip-path="url(#header)" x="0" y="0" width="1423" height="785" style="fill: url(&quot;#style&quot;);"></rect>
+    <defs>
+        <clipPath id="header">
+            <!-- <rect width="1423" height="785" rx="6" fill="#F9FAFF"/> -->
+            <!-- <path d="M926 177C926 174.791 927.791 173 930 173H1305C1307.21 173 1309 174.791 1309 177V574C1309 576.209 1307.21 578 1305 578H930C927.791 578 926 576.209 926 574V177Z" fill="#EEF3FF"/> -->
+            <rect x="520" y="173" width="383" height="405" rx="4" fill="#EEF3FF"/>
+            <rect x="109" y="173" width="383" height="405" rx="4" fill="#EEF3FF"/>
+            <rect x="109" y="23" width="365" height="40" rx="4" fill="#EEF3FF"/>
+            <rect x="109" y="77" width="225" height="40" rx="4" fill="#EEF3FF"/>
+        </clipPath>
+        <linearGradient id="style">
+            <stop offset="0.675228" stop-color="#EEF3FF">
+                <animate attributeName="offset" values="-2; 1" dur="2s" repeatCount="indefinite"></animate>
+            </stop>
+            <stop offset="1.17523" stop-color="#e3ebff">
+                <animate attributeName="offset" values="-1.5; 1.5" dur="2s" repeatCount="indefinite"></animate>
+            </stop>
+            <stop offset="1.67523" stop-color="#EEF3FF">
+                <animate attributeName="offset" values="-1; 2" dur="2s" repeatCount="indefinite"></animate>
+            </stop>
+        </linearGradient>
+    </defs>
+</svg>

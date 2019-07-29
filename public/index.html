@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="theme-color" content="#003505">
+		<meta name="theme-color" content="#003505">
+		<meta name="msapplication-navbutton-color" content="#003505">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#003505"> -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<!-- <link rel="apple-touch-icon" sizes="57x57" href="<%= BASE_URL %>favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="<%= BASE_URL %>favicons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="<%= BASE_URL %>favicons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="<%= BASE_URL %>favicons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="<%= BASE_URL %>favicons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="<%= BASE_URL %>favicons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="<%= BASE_URL %>favicons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="<%= BASE_URL %>favicons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>favicons/apple-touch-icon-180x180.png"> -->
+
+		<!-- <link rel="icon" type="image/png" href="<%= BASE_URL %>favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="<%= BASE_URL %>favicons/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="<%= BASE_URL %>favicons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="<%= BASE_URL %>favicons/favicon-16x16.png" sizes="16x16"> -->
+		<link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<%= BASE_URL %>favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>favicon-16x16.png">
+		<link rel="manifest" href="<%= BASE_URL %>site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+	
+		<!-- <link rel="icon" href="<%= BASE_URL %>favicons/apple-touch-icon-57x57.png"> -->
+		<title>Screenlife</title>
+	</head>
+	<body>
+		<noscript>
+			<strong>We're sorry but hello-vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+		</noscript>
+		<div id="app">
+			<transition name="router-anim">
+				<router-view :key="$route.fullPath"></router-view>
+			</transition>
+		</div>
+		<script>
+			window.config = {
+			  langDefault: 'en',
+			  // activeLang: localStorage.getItem('lang') != undefined ? localStorage.getItem('lang') : 'ru',
+			  activeLang: localStorage.getItem('lang') != undefined ? localStorage.getItem('lang') : window.navigator.language.slice(0,2) || navigator.userLanguage.slice(0,2),
+			  langs:{
+					ru:'ru',
+					en:'en'
+			  }
+			};
+	  
+			let setLang = function() {
+			  localStorage.setItem('vueml-lang', window.config.activeLang);
+			  localStorage.setItem('lang', window.config.activeLang);
+			  let lang = localStorage.getItem('lang');
+	  
+			  let currentUrl = window.location.pathname;
+				var langCode = currentUrl.split('/')[1];
+	  
+				if (lang) {
+					if (langCode == 'ru' || langCode == 'en') {
+					  
+						if (langCode != lang) {
+							var newLang = lang === window.config.langDefault ? '' : lang;
+							currentUrl = currentUrl.replace(langCode, newLang);
+							currentUrl = currentUrl.replace('//', '/');
+							window.location.replace(currentUrl);
+						} else {
+							localStorage.setItem('lang', langCode);
+							window.config.activeLang = langCode;
+						}
+					} else {
+						if (lang != window.config.langDefault) {
+							currentUrl = '/' + lang + currentUrl;
+							window.location.replace(currentUrl);
+						}
+					}
+				} else {
+					if (langCode == 'ru' || langCode == 'en') {
+						localStorage.setItem('lang', langCode);
+						window.config.activeLang = langCode;
+					} else {
+						localStorage.setItem('lang', window.config.langDefault);
+						window.config.activeLang = window.config.langDefault;
+					}
+			  }
+			};
+
+			setLang();
+		  </script>
+		<!-- built files will be auto injected -->
+	</body>
+</html>

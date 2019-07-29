@@ -1,0 +1,174 @@
+@import '../helpers/sass/starter.scss';
+@import '../helpers/sass/normalize.scss';
+@import '../helpers/sass/animate.scss';
+@import '../helpers/sass/mixins.scss';
+@import '../../../node_modules/slick-carousel/slick/slick.scss';
+
+$font-dir: '../assets/fonts';
+
+// @include font-face('SFProDisplay-Regular', '#{$font-dir}/SanFrancisco/SFUIDisplay-Regular', normal, normal, woff);
+
+// @include font-face('SFProDisplay-Light', '#{$font-dir}/SanFrancisco/SFUIDisplay-Light', normal, normal, woff);
+
+// @include font-face('SFProDisplay-Semibold', '#{$font-dir}/SanFrancisco/SFUIDisplay-Semibold', normal, normal, woff);
+
+// @include font-face('SFProDisplay-Bold', '#{$font-dir}/SanFrancisco/SFUIDisplay-Bold', normal, normal, woff);
+
+// @include font-face('Roboto-Light', '#{$font-dir}/Roboto/Roboto-Light', normal, normal, woff);
+
+// @include font-face('Roboto-Regular', '#{$font-dir}/Roboto/Roboto-Regular', normal, normal, woff);
+
+// @include font-face('Roboto-Medium', '#{$font-dir}/Roboto/Roboto-Medium', normal, normal, ttf woff woff2);
+// @include font-face('GothamPro-Regular', '#{$font-dir}/Gotham/GothamPro', normal, normal, woff);
+// @include font-face('GothamPro-Medium', '#{$font-dir}/Gotham/GothaProMed', normal, normal, otf);
+
+@include font-face('SFProDisplay', '#{$font-dir}/SanFrancisco/SFUIDisplay-Regular', normal, normal, woff);
+@include font-face('SFProDisplay', '#{$font-dir}/SanFrancisco/SFUIDisplay-Light', 300, normal, woff);
+@include font-face('SFProDisplay', '#{$font-dir}/SanFrancisco/SFUIDisplay-Semibold', 600, normal, woff);
+@include font-face('SFProDisplay', '#{$font-dir}/SanFrancisco/SFUIDisplay-Bold', 700, normal, woff);
+
+@include font-face('Roboto', '#{$font-dir}/Roboto/Roboto-Light', 300, normal, woff);
+@include font-face('Roboto', '#{$font-dir}/Roboto/Roboto-Regular', normal, normal, woff);
+@include font-face('Roboto', '#{$font-dir}/Roboto/Roboto-Medium', 500, normal, ttf woff woff2);
+
+@include font-face('GothamPro', '#{$font-dir}/Gotham/GothamPro', normal, normal, woff);
+@include font-face('GothamPro', '#{$font-dir}/Gotham/GothaProMed', 500, normal, otf);
+
+
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#app {
+    min-width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+* {
+    line-height: normal;
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 18px/23px 'SFProDisplay-Regular', Arial, Helvetica, sans-serif;
+    -webkit-overflow-scrolling:touch;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    background: #F8FAFF;
+    position: relative;
+    
+
+    &:before {
+        content: '';
+        position: fixed;
+        z-index: 100;
+        pointer-events: none;
+        top: -70px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding-bottom: 70px;
+        transform: translateY(70px);
+        width: 100%;
+        height: 100%;
+        background: #F7F8FA;
+        background-image: url('../assets/img/mobile-header-bg.png');
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: contain;
+        opacity: 0;
+        transition: .3s all ease;
+    }
+
+    &.menu_opened {
+
+        &:before {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+    max-width: calc(1196px + 60px);
+    padding: 0 30px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+        width: 960px;
+    }
+
+    @media (max-width: 960px) {
+        // width: 720px;
+        width: 100%;    
+    }
+
+    @media (max-width: 640px) {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+button {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    outline: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-appearance: none;
+}
+
+.aos-no-animate {
+    transition: none !important;
+}
+
+[data-no-aos] {
+    transition: none;
+}
+
+.aos-hidden {
+    visibility: hidden;
+}
+
+/** UI */
+.progress-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .3s all ease;
+}
+
+.progress-arrow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes progress-btn {
+    0% {
+        stroke-dashoffset: 200;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

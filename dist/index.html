@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta name=msapplication-TileColor content=#da532c><meta name=theme-color content=#ffffff><title>Screenlife</title><link href=/css/app.14825cb2.css rel=preload as=style><link href=/css/chunk-vendors.5f75aca3.css rel=preload as=style><link href=/js/app.d58fbde2.js rel=preload as=script><link href=/js/chunk-vendors.373d4f15.js rel=preload as=script><link href=/css/chunk-vendors.5f75aca3.css rel=stylesheet><link href=/css/app.14825cb2.css rel=stylesheet></head><body><noscript><strong>We're sorry but hello-vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app><transition name=router-anim><router-view :key=$route.fullPath></router-view></transition></div><script>window.config = {
+			  langDefault: 'en',
+			  // activeLang: localStorage.getItem('lang') != undefined ? localStorage.getItem('lang') : 'ru',
+			  activeLang: localStorage.getItem('lang') != undefined ? localStorage.getItem('lang') : window.navigator.language.slice(0,2) || navigator.userLanguage.slice(0,2),
+			  langs:{
+					ru:'ru',
+					en:'en'
+			  }
+			};
+	  
+			let setLang = function() {
+			  localStorage.setItem('vueml-lang', window.config.activeLang);
+			  localStorage.setItem('lang', window.config.activeLang);
+			  let lang = localStorage.getItem('lang');
+	  
+			  let currentUrl = window.location.pathname;
+				var langCode = currentUrl.split('/')[1];
+	  
+				if (lang) {
+					if (langCode == 'ru' || langCode == 'en') {
+					  
+						if (langCode != lang) {
+							var newLang = lang === window.config.langDefault ? '' : lang;
+							currentUrl = currentUrl.replace(langCode, newLang);
+							currentUrl = currentUrl.replace('//', '/');
+							window.location.replace(currentUrl);
+						} else {
+							localStorage.setItem('lang', langCode);
+							window.config.activeLang = langCode;
+						}
+					} else {
+						if (lang != window.config.langDefault) {
+							currentUrl = '/' + lang + currentUrl;
+							window.location.replace(currentUrl);
+						}
+					}
+				} else {
+					if (langCode == 'ru' || langCode == 'en') {
+						localStorage.setItem('lang', langCode);
+						window.config.activeLang = langCode;
+					} else {
+						localStorage.setItem('lang', window.config.langDefault);
+						window.config.activeLang = window.config.langDefault;
+					}
+			  }
+			};
+
+			setLang();</script><script src=/js/chunk-vendors.373d4f15.js></script><script src=/js/app.d58fbde2.js></script></body></html>
